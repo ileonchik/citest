@@ -11,8 +11,6 @@
         
 
         
-        private IndividualIdentificationNumbers identificationNumbersField;
-        
         /// <remarks/>
         public string CustomerCode {
             get {

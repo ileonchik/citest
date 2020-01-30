@@ -49,45 +49,110 @@ namespace CiTest.Entities.DatabaseEntities
         public decimal OriginalAmount
         {
             get => originalAmountField.Value;
-            set => originalAmountField.Value = value;
+            set
+            {
+                if (originalAmountField == null)
+                {
+                    originalAmountField = new ContractDataOriginalAmount();
+                }
+                originalAmountField.Value = value;
+            }
+
         }
 
-        public string OriginalAmountCurrency
+        public CommonCurrency OriginalAmountCurrency
         {
-            get => originalAmountField.Currency.ToString();
-            set => originalAmountField.Currency = Enum.Parse<CommonCurrency>(value);
+            get => originalAmountField.Currency;
+            set
+            {
+                if (originalAmountField == null)
+                {
+                    originalAmountField = new ContractDataOriginalAmount();
+                }
+                originalAmountField.Currency = value;
+            }
         }
 
 
 
-        public CommonCurrency InstallmentAmountField
+        public decimal InstallmentAmount
+        {
+            get => installmentAmountField.Value;
+            set
+            {
+                if (installmentAmountField == null)
+                {
+                    installmentAmountField = new ContractDataInstallmentAmount();
+                }
+                installmentAmountField.Value = value;
+            }
+
+        }
+
+        public CommonCurrency InstallmentAmountCurrency
         {
             get => installmentAmountField.Currency;
-            set => installmentAmountField.Currency = value;
+            set
+            {
+                if (installmentAmountField == null)
+                {
+                    installmentAmountField = new ContractDataInstallmentAmount();
+                }
+                installmentAmountField.Currency = value;
+            }
+
         }
 
         public decimal CurrentBalance
         {
             get => currentBalanceField.Value;
-            set => currentBalanceField.Value = value;
+            set
+            {
+                if (currentBalanceField == null)
+                {
+                    currentBalanceField = new CurrentBalance();
+                }
+                currentBalanceField.Value = value;
+            }
         }
 
         public CommonCurrency CurrentBalanceCurrency
         {
             get => currentBalanceField.Currency;
-            set => currentBalanceField.Currency = value;
+            set
+            {
+                if (currentBalanceField == null)
+                {
+                    currentBalanceField = new CurrentBalance();
+                }
+                currentBalanceField.Currency = value;
+            }
         }
 
         public decimal OverdueBalance
         {
             get => overdueBalanceField.Value;
-            set => overdueBalanceField.Value = value;
+            set
+            {
+                if (overdueBalanceField == null)
+                {
+                    overdueBalanceField = new ContractDataOverdueBalance();
+                }
+                overdueBalanceField.Value = value;
+            } 
         }
 
         public CommonCurrency OverdueBalanceCurrency
         {
             get => overdueBalanceField.Currency;
-            set => overdueBalanceField.Currency = value;
+            set
+            {
+                if (overdueBalanceField == null)
+                {
+                    overdueBalanceField = new ContractDataOverdueBalance();
+                }
+                overdueBalanceField.Currency = value;
+            }
         }
 
         public DateTime DateOfLastPaymentField

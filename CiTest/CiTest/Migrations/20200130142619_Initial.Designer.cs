@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CiTest.Migrations
 {
     [DbContext(typeof(CiTestContext))]
-    [Migration("20200130130616_Initial")]
+    [Migration("20200130142619_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,10 @@ namespace CiTest.Migrations
                     b.Property<DateTime>("DateOfLastPaymentField")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InstallmentAmountField")
+                    b.Property<decimal>("InstallmentAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("InstallmentAmountCurrency")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("NextPaymentDateField")
@@ -47,8 +50,8 @@ namespace CiTest.Migrations
                     b.Property<decimal>("OriginalAmount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("OriginalAmountCurrency")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("OriginalAmountCurrency")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("OverdueBalance")
                         .HasColumnType("decimal(18,2)");
@@ -85,6 +88,9 @@ namespace CiTest.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LastNameField")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NationalID")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CustomerCodeField");

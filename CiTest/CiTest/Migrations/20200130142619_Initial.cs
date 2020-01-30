@@ -14,8 +14,9 @@ namespace CiTest.Migrations
                     ContractCode = table.Column<string>(nullable: false),
                     PhaseOfContractField = table.Column<int>(nullable: false),
                     OriginalAmount = table.Column<decimal>(nullable: false),
-                    OriginalAmountCurrency = table.Column<string>(nullable: true),
-                    InstallmentAmountField = table.Column<int>(nullable: false),
+                    OriginalAmountCurrency = table.Column<int>(nullable: false),
+                    InstallmentAmount = table.Column<decimal>(nullable: false),
+                    InstallmentAmountCurrency = table.Column<int>(nullable: false),
                     CurrentBalance = table.Column<decimal>(nullable: false),
                     CurrentBalanceCurrency = table.Column<int>(nullable: false),
                     OverdueBalance = table.Column<decimal>(nullable: false),
@@ -35,6 +36,7 @@ namespace CiTest.Migrations
                 columns: table => new
                 {
                     CustomerCodeField = table.Column<string>(nullable: false),
+                    NationalID = table.Column<string>(nullable: true),
                     FirstNameField = table.Column<string>(nullable: true),
                     LastNameField = table.Column<string>(nullable: true),
                     GenderField = table.Column<int>(nullable: false),

@@ -20,5 +20,9 @@ namespace CiTest.Entities.Common
         internal System.DateTime dateOfBirthField;
 
         internal bool dateOfBirthFieldSpecified;
+
+
+        internal IndividualIdentificationNumbers identificationNumbersField;
+
     }
 }

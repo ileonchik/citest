@@ -16,15 +16,14 @@ namespace CiTest.Entities.DatabaseEntities
             FirstNameField = data.firstNameField;
             LastNameField = data.lastNameField;
             GenderField = data.genderField;
-            DateOfBirthField = dateOfBirthField;
+            DateOfBirthField = data.dateOfBirthField;
+            NationalID= data.identificationNumbersField.NationalID;
         }
 
         [Key]
-        public string CustomerCodeField
-        {
-            get => customerCodeField;
-            set => customerCodeField = value;
-        }
+        public string CustomerCodeField { get; set; }
+
+        public string NationalID { get; set; }
 
         public string FirstNameField
         {
