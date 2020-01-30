@@ -23,8 +23,7 @@ namespace CiTest
 
             XmlStorage.Path = path;
           //  var contracts = XmlStorage.Contracts;
-          var configuration = ConfigurationService.GetBuilder().Build();
-            CiTestContext context = new  CiTestContext();
+          CiTestContext context = new  CiTestContext();
             context.Database.Migrate();
             CreateHostBuilder(args).Build().Run();
            
