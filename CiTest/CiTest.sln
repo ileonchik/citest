@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiTest.Entities", "CiTest.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiTest.Services", "CiTest.Services\CiTest.Services.csproj", "{6719BF4F-30E4-49D2-89B5-6354AF0ABB71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiTest.Common", "CiTest.Common\CiTest.Common.csproj", "{A7464B5F-1315-4C41-B7D5-46DF760A7BFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6719BF4F-30E4-49D2-89B5-6354AF0ABB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6719BF4F-30E4-49D2-89B5-6354AF0ABB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6719BF4F-30E4-49D2-89B5-6354AF0ABB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7464B5F-1315-4C41-B7D5-46DF760A7BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7464B5F-1315-4C41-B7D5-46DF760A7BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7464B5F-1315-4C41-B7D5-46DF760A7BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7464B5F-1315-4C41-B7D5-46DF760A7BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

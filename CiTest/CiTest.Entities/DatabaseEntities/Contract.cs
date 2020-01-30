@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using CiTest.Entities.XmlEntities;
 using ContractData = CiTest.Entities.Common.ContractData;
 
@@ -14,9 +15,10 @@ namespace CiTest.Entities.DatabaseEntities
 
 
         //TODO:It could be better to use AutoMapper for this
-        public Contract(string contractCode, ContractData data)
+        public Contract(XmlEntities.Contract xmlData)
         {
-            ContractCode = contractCode;
+            var data = xmlData.ContractData;
+            ContractCode = xmlData.ContractCode;
             phaseOfContractField = data.phaseOfContractField;
             originalAmountField = data.originalAmountField;
             installmentAmountField = data.installmentAmountField;
@@ -26,7 +28,8 @@ namespace CiTest.Entities.DatabaseEntities
             dateOfLastPaymentField = data.dateOfLastPaymentField;
             realEndDateField = data.realEndDateField;
             nextPaymentDateField = data.nextPaymentDateField;
-
+            Individuals = xmlData.Individual.
+                Select(i => new Individual((Common.Individual) i)).ToList();
         }
          
 

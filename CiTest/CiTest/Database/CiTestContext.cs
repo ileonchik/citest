@@ -1,20 +1,23 @@
-﻿using CiTest.Entities.DatabaseEntities;
+﻿using CiTest.Common.Interfaces;
+using CiTest.Entities.DatabaseEntities;
 using CiTest.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace CiTest.Database
 {
-    public class CiTestContext:DbContext
+    public class CiTestContext:DbContext,ICiTestContext
     {
-        private IConfiguration configuration;
         public CiTestContext()
         {
-           configuration =  ConfigurationService.GetBuilder().Build();
+          var  configuration =  ConfigurationService.GetBuilder().Build();
            connectionString = configuration.GetConnectionString("Default");
         }
 
         public DbSet<Contract> Contracts { get; set; }
+
+        public DbSet<Individual> Individuals { get; set; }
+
 
         private readonly string connectionString;
 

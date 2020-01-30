@@ -6,21 +6,10 @@
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://creditinfo.com/schemas/Sample/Data")]
-    public class Individual {
+    public class Individual :Common.Individual
+    {
         
-        private string customerCodeField;
-        
-        private string firstNameField;
-        
-        private string lastNameField;
-        
-        private GenderNotSpecified genderField;
-        
-        private bool genderFieldSpecified;
-        
-        private System.DateTime dateOfBirthField;
-        
-        private bool dateOfBirthFieldSpecified;
+
         
         private IndividualIdentificationNumbers identificationNumbersField;
         
@@ -55,7 +44,7 @@
         }
         
         /// <remarks/>
-        public GenderNotSpecified Gender {
+        public Gender Gender {
             get {
                 return this.genderField;
             }
