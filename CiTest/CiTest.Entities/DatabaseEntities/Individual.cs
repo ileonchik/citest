@@ -6,6 +6,10 @@ namespace CiTest.Entities.DatabaseEntities
 {
     public class Individual:Common.Individual
     {
+        public Individual()
+        {
+        }
+
         public Individual(Common.Individual data)
         {
             CustomerCodeField = data.customerCodeField;

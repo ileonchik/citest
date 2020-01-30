@@ -1,5 +1,5 @@
 {
     "ConnectionStrings": {
-        "Default": "Server=localhost;Database=CiTest;UserId=CiTest;Password=qMj2K95CxRfRmeyX"
+        "Default": "Server=localhost;Database=CiTest;User Id=CiTest;Password=qMj2K95CxRfRmeyX"
     }
 }

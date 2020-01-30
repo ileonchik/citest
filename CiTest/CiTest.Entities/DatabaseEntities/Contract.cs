@@ -28,10 +28,12 @@ namespace CiTest.Entities.DatabaseEntities
             dateOfLastPaymentField = data.dateOfLastPaymentField;
             realEndDateField = data.realEndDateField;
             nextPaymentDateField = data.nextPaymentDateField;
-            Individuals = xmlData.Individual.
-                Select(i => new Individual((Common.Individual) i)).ToList();
         }
-         
+
+        public Contract(XmlEntities.Contract xmlData, List<Individual> individuals) : this(xmlData)
+        {
+            Individuals = individuals;
+        }
 
         [Key]
         public string ContractCode { get; set; }

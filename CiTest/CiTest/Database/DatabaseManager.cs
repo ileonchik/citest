@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using CiTest.Common.Interfaces;
-using CiTest.Entities.XmlEntities;
+using CiTest.Entities.DatabaseEntities;
+using Contract = CiTest.Entities.XmlEntities.Contract;
 
 namespace CiTest.Database
 {
@@ -40,7 +41,29 @@ namespace CiTest.Database
 
         public void Insert(IList<Contract> contracts)
         {
-            Context.Contracts.AddRange(contracts.Select(i=>new Entities.DatabaseEntities.Contract(i)));
+
+            foreach (Contract contract in contracts)
+            {
+                //It's not clear what to do if contract is a duplicate
+                if (!Context.Contracts.Any(i => i.ContractCode == contract.ContractCode))
+                {
+                    var individuals = new List<Entities.DatabaseEntities.Individual>();
+                    foreach (var individual in contract.Individual)
+                    {
+                        var item = Context.Individuals.FirstOrDefault(i =>
+                            i.CustomerCodeField == individual.CustomerCode);
+                        if (item == null)
+                        {
+                            item = new Individual(individual);
+                            Context.Individuals.Add(item);
+                        }
+
+                        individuals.Add(item);
+                        Context.Contracts.Add(new Entities.DatabaseEntities.Contract(contract, individuals));
+                    }
+                }
+            }
+
             Context.SaveChanges();
         }
     }
