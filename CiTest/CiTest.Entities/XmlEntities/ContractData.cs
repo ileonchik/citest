@@ -1,4 +1,4 @@
-﻿namespace CiTest.Entities
+﻿namespace CiTest.Entities.XmlEntities
 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
@@ -6,33 +6,15 @@
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://creditinfo.com/schemas/Sample/Data")]
-    public  class ContractData {
+    public  class ContractData :Common.ContractData
+    {
         
-        private ContractPhaseOfContract phaseOfContractField;
+
         
-        private ContractDataOriginalAmount originalAmountField;
-        
-        private ContractDataInstallmentAmount installmentAmountField;
-        
-        private CurrentBalance currentBalanceField;
-        
-        private ContractDataOverdueBalance overdueBalanceField;
-        
-        private System.DateTime dateOfLastPaymentField;
-        
-        private bool dateOfLastPaymentFieldSpecified;
-        
-        private System.DateTime nextPaymentDateField;
-        
+        private bool realEndDateFieldSpecified;        
+        private bool dateAccountOpenedFieldSpecified;  
         private bool nextPaymentDateFieldSpecified;
-        
-        private System.DateTime dateAccountOpenedField;
-        
-        private bool dateAccountOpenedFieldSpecified;
-        
-        private System.DateTime realEndDateField;
-        
-        private bool realEndDateFieldSpecified;
+        private bool dateOfLastPaymentFieldSpecified;
         
         /// <remarks/>
         public ContractPhaseOfContract PhaseOfContract {

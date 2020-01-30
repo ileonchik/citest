@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Dynamic;
-using System.IO;
 using System.Linq;
 using System.Xml;
 using CiTest.Entities;
+using CiTest.Entities.XmlEntities;
 
 namespace CiTest.Services
 {

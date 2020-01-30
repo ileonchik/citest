@@ -13,6 +13,7 @@
 // 
 
 using CiTest.Entities;
+using CiTest.Entities.XmlEntities;
 
 namespace CiTest {
     using System.Xml.Serialization;
